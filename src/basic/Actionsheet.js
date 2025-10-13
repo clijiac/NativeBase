@@ -2,6 +2,7 @@
 /* eslint-disable radix */
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { ViewPropTypes } from "deprecated-react-native-prop-types";
 import {
   ActionSheetIOS,
   Dimensions,
@@ -10,7 +11,6 @@ import {
   Platform,
   TouchableOpacity,
   StyleSheet,
-  ViewPropTypes
 } from 'react-native';
 import { connectStyle } from 'native-base-shoutem-theme';
 

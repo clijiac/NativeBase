@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import createReactClass from 'create-react-class';
 import _ from 'lodash';
-import { InteractionManager, ViewPropTypes } from '../../utils';
+import { InteractionManager } from '../../utils';
 const React = require('react');
 const { Component } = React;
 const ReactNative = require('react-native');
@@ -13,14 +13,13 @@ const {
   StyleSheet,
   Platform
 } = ReactNative;
-const TimerMixin = require('react-timer-mixin');
+// TimerMixin removed; using explicit timeout handle instead
 
 const SceneComponent = require('./SceneComponent');
 const { DefaultTabBar } = require('./DefaultTabBar');
 const { ScrollableTabBar } = require('./ScrollableTabBar');
 
 const ScrollableTabView = createReactClass({
-  mixins: [TimerMixin],
   statics: {
     DefaultTabBar,
     ScrollableTabBar
@@ -38,7 +37,7 @@ const ScrollableTabView = createReactClass({
     onChangeTab: PropTypes.func,
     onScroll: PropTypes.func,
     renderTabBar: PropTypes.any,
-    style: ViewPropTypes.style,
+    style: PropTypes.shape({ style: PropTypes.any }),
     contentProps: PropTypes.object,
     scrollWithoutAnimation: PropTypes.bool,
     locked: PropTypes.bool,
@@ -76,12 +75,20 @@ const ScrollableTabView = createReactClass({
     };
     InteractionManager.runAfterInteractions(scrollFn);
     // because of contentOffset is not working on Android
-    setTimeout(() => {
-      this.scrollView.scrollTo({
-        x: this.props.initialPage * this.state.containerWidth,
-        animated: false,
-      });
+    this.scrollToTimer = setTimeout(() => {
+      if (this.scrollView) {
+        this.scrollView.scrollTo({
+          x: this.props.initialPage * this.state.containerWidth,
+          animated: false,
+        });
+      }
     });
+  },
+
+  componentWillUnmount() {
+    if (this.scrollToTimer) {
+      clearTimeout(this.scrollToTimer);
+    }
   },
 
   UNSAFE_componentWillReceiveProps(props) {
@@ -271,9 +278,10 @@ const ScrollableTabView = createReactClass({
       return;
     }
     this.setState({ containerWidth: width });
-    this.requestAnimationFrame(() => {
-      this.goToPage(this.state.currentPage);
-    });
+    this.requestAnimationFrame &&
+      this.requestAnimationFrame(() => {
+        this.goToPage(this.state.currentPage);
+      });
   },
 
   _children(children = this.props.children) {
@@ -297,6 +305,12 @@ const ScrollableTabView = createReactClass({
         _.get(child.props.heading.props, 'style', undefined)
       ),
       disabled: this._children().map(child => child.props.disabled),
+      accessible: this._children().map(child =>
+        child.props.accessible == false ? false : true || true
+      ),
+      accessibilityLabel: this._children().map(
+        child => child.props.accessibilityLabel
+      ),
       activeTab: this.state.currentPage,
       scrollValue: this.state.scrollValue,
       containerWidth: this.state.containerWidth

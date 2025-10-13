@@ -4,6 +4,7 @@ import { Text } from 'react-native';
 import { connectStyle } from 'native-base-shoutem-theme';
 
 import mapPropsToStyleNames from '../utils/mapPropsToStyleNames';
+import { TextPropTypes } from 'deprecated-react-native-prop-types';
 
 class Title extends Component {
   render() {
@@ -14,7 +15,7 @@ class Title extends Component {
 }
 
 Title.propTypes = {
-  ...Text.propTypes,
+  ...TextPropTypes,
   style: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.number,

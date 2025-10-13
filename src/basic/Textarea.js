@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TextInput } from 'react-native';
 import { connectStyle } from 'native-base-shoutem-theme';
+import { TextInputPropTypes } from 'deprecated-react-native-prop-types'
 
 import variables from '../theme/variables/platform';
 import computeProps from '../utils/computeProps';
@@ -44,7 +45,7 @@ class Textarea extends Component {
 }
 
 Textarea.propTypes = {
-  ...TextInput.propTypes,
+  ...TextInputPropTypes,
   style: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.number,

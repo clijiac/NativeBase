@@ -4,7 +4,8 @@ import { get } from 'lodash';
 import { connectStyle } from 'native-base-shoutem-theme';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { View, StatusBar, StyleSheet, ViewPropTypes } from 'react-native';
+import { ViewPropTypes } from "deprecated-react-native-prop-types";
+import { View, StatusBar, StyleSheet } from 'react-native';
 
 import mapPropsToStyleNames from '../utils/mapPropsToStyleNames';
 import variable from '../theme/variables/platform';

@@ -4,6 +4,7 @@ import { Text } from 'react-native';
 import { connectStyle } from 'native-base-shoutem-theme';
 
 import mapPropsToStyleNames from '../utils/mapPropsToStyleNames';
+import { TextPropTypes } from 'deprecated-react-native-prop-types';
 
 class H3 extends Component {
   render() {
@@ -23,7 +24,7 @@ const childrenType = function(props, propName, component) {
 };
 
 H3.propTypes = {
-  ...Text.propTypes,
+  ...TextPropTypes,
   children: childrenType,
   style: PropTypes.oneOfType([
     PropTypes.object,
