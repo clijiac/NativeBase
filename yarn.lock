@@ -5265,7 +5265,7 @@ multimatch@^4.0.0:
     arrify "^2.0.1"
     minimatch "^3.0.4"
 
-native-base-shoutem-theme@clijiac/theme#master:
+"native-base-shoutem-theme@npm:native-base-shoutem-theme-19@0.4.3":
   version "0.4.3"
   resolved "git+ssh://git@github.com/clijiac/theme.git#7b4813a3141ef2cfa4e0618340a6b21bc7cd33fd"
   dependencies:

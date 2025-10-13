@@ -1,5 +1,5 @@
 {
-  "name": "native-base",
+  "name": "native-base-2-fix",
   "description": "Essential cross-platform UI components for React Native",
   "keywords": [
     "android",
@@ -26,7 +26,7 @@
       "node_modules/(?!react-native|@shoutem|react-clone-referenced-element|native-base-shoutem-theme)"
     ]
   },
-  "version": "2.13.8-1",
+  "version": "2.13.8-2",
   "license": "Apache-2.0",
   "private": false,
   "dependencies": {
@@ -40,7 +40,7 @@
     "fs-extra": "^2.0.0",
     "jest-react-native": "^18.0.0",
     "lodash": "^4.17.14",
-    "native-base-shoutem-theme": "clijiac/theme#master",
+    "native-base-shoutem-theme": "npm:native-base-shoutem-theme-19@0.4.3",
     "opencollective-postinstall": "^2.0.2",
     "print-message": "^2.1.0",
     "prop-types": "^15.5.10",
@@ -94,5 +94,7 @@
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/NativeBase"
-  }
+  },"publishConfig": {
+  "registry": "https://registry.npmjs.org/"
+}
 }
