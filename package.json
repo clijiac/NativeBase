@@ -18,7 +18,8 @@
     "transpile": "npm run compile && cp src/basic/Icon/NBIcons.json dist/src/basic/Icon",
     "prepublish": "npm run transpile",
     "postinstall": "node addEjectScript.js && opencollective-postinstall",
-    "flow": "flow"
+    "flow": "flow",
+    "prepublishOnly": "npm run transpile"
   },
   "jest": {
     "preset": "react-native",
@@ -26,7 +27,7 @@
       "node_modules/(?!react-native|@shoutem|react-clone-referenced-element|native-base-shoutem-theme)"
     ]
   },
-  "version": "2.13.8-2",
+  "version": "2.13.8-3",
   "license": "Apache-2.0",
   "private": false,
   "dependencies": {
