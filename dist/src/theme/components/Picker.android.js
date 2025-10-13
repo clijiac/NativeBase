@@ -1,0 +1,2 @@
+Object.defineProperty(exports,"__esModule",{value:true});exports.default=void 0;var _default=exports.default=function _default(){var pickerTheme={'.note':{color:'#8F8E95'},marginRight:-4,flexGrow:1};return pickerTheme;};
+//# sourceMappingURL=Picker.android.js.map

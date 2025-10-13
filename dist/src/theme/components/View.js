@@ -1,0 +1,2 @@
+var _interopRequireDefault=require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports,"__esModule",{value:true});exports.default=void 0;var _platform=_interopRequireDefault(require("./../variables/platform"));var _default=exports.default=function _default(){var variables=arguments.length>0&&arguments[0]!==undefined?arguments[0]:_platform.default;var viewTheme={'.padder':{padding:variables.contentPadding}};return viewTheme;};
+//# sourceMappingURL=View.js.map

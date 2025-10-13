@@ -1,16 +1,14 @@
-import { connectStyle } from 'native-base-shoutem-theme';
+import { connectStyle, ThemeContext } from 'native-base-shoutem-theme';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 import variable from '../theme/variables/platform';
 import mapPropsToStyleNames from '../utils/mapPropsToStyleNames';
 
 class Content extends Component {
-  static contextTypes = {
-    theme: PropTypes.object
-  };
+  static contextType = ThemeContext;
 
   constructor(props) {
     super(props);
@@ -38,7 +36,7 @@ class Content extends Component {
       style
     } = this.props;
     const containerStyle = { flex: 1 };
-    const variables = this.context.theme
+    const variables = this.context && this.context.theme
       ? this.context.theme['@@shoutem.theme/themeStyle'].variables
       : variable;
 

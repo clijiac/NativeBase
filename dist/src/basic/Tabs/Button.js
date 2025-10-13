@@ -1,0 +1,2 @@
+var _jsxRuntime=require("react/jsx-runtime");var _this=this,_jsxFileName="C:\\Users\\cliji\\WebstormProjects\\NativeBase\\src\\basic\\Tabs\\Button.js";var React=require('react');var ReactNative=require('react-native');var TouchableOpacity=ReactNative.TouchableOpacity,View=ReactNative.View;var Button=function Button(props){return(0,_jsxRuntime.jsx)(TouchableOpacity,Object.assign({},props,{children:props.children}));};module.exports=Button;
+//# sourceMappingURL=Button.js.map

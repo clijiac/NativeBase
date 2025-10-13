@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Platform } from 'react-native';
-import { connectStyle } from 'native-base-shoutem-theme';
+import { connectStyle, ThemeContext } from 'native-base-shoutem-theme';
 
 import variable from '../../theme/variables/platform';
 import mapPropsToStyleNames from '../../utils/mapPropsToStyleNames';
@@ -10,12 +10,10 @@ import { IconNB } from '../IconNB';
 import ic from './NBIcons.json';
 
 class Icon extends Component {
-  static contextTypes = {
-    theme: PropTypes.object
-  };
+  static contextType = ThemeContext;
 
   getName() {
-    const variables = this.context.theme
+    const variables = this.context && this.context.theme
       ? this.context.theme['@@shoutem.theme/themeStyle'].variables
       : variable;
     const platformStyle = variables.platformStyle;

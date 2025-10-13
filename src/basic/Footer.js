@@ -2,15 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ViewPropTypes } from "deprecated-react-native-prop-types";
 import { View } from 'react-native';
-import { connectStyle } from 'native-base-shoutem-theme';
+import { connectStyle, ThemeContext } from 'native-base-shoutem-theme';
 
 import variable from '../theme/variables/platform';
 import mapPropsToStyleNames from '../utils/mapPropsToStyleNames';
 
 class Footer extends Component {
-  static contextTypes = {
-    theme: PropTypes.object
-  };
+  static contextType = ThemeContext;
   constructor(props) {
     super(props);
     this.state = {
@@ -72,7 +70,7 @@ class Footer extends Component {
   }
   render() {
     const { style } = this.props;
-    const variables = this.context.theme
+    const variables = this.context && this.context.theme
       ? this.context.theme['@@shoutem.theme/themeStyle'].variables
       : variable;
     return variables.isIphoneX ? (

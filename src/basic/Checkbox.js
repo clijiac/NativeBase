@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TouchableOpacity } from 'react-native';
 import IconNB from 'react-native-vector-icons/Ionicons';
-import { connectStyle } from 'native-base-shoutem-theme';
+import { connectStyle, ThemeContext } from 'native-base-shoutem-theme';
 
 import mapPropsToStyleNames from '../utils/mapPropsToStyleNames';
 import variable from '../theme/variables/platform';
@@ -10,9 +10,7 @@ import { PLATFORM } from '../theme/variables/commonColor';
 import computeProps from '../utils/computeProps';
 
 class CheckBox extends Component {
-  static contextTypes = {
-    theme: PropTypes.object
-  };
+  static contextType = ThemeContext;
 
   getInitialStyle(variables) {
     const { color, checked } = this.props;
@@ -36,7 +34,7 @@ class CheckBox extends Component {
   }
   render() {
     const { checked } = this.props;
-    const variables = this.context.theme
+    const variables = this.context && this.context.theme
       ? this.context.theme['@@shoutem.theme/themeStyle'].variables
       : variable;
     const platformStyle = variables.platformStyle;

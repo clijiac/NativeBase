@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable no-unneeded-ternary */
 import { get } from 'lodash';
-import { connectStyle } from 'native-base-shoutem-theme';
+import { connectStyle, ThemeContext } from 'native-base-shoutem-theme';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { ViewPropTypes } from "deprecated-react-native-prop-types";
@@ -11,9 +11,7 @@ import mapPropsToStyleNames from '../utils/mapPropsToStyleNames';
 import variable from '../theme/variables/platform';
 
 class Header extends Component {
-  static contextTypes = {
-    theme: PropTypes.object
-  };
+  static contextType = ThemeContext;
 
   constructor(props) {
     super(props);
@@ -88,7 +86,7 @@ class Header extends Component {
       translucent
     } = this.props;
     const { orientation } = this.state;
-    const variables = this.context.theme
+    const variables = this.context && this.context.theme
       ? this.context.theme['@@shoutem.theme/themeStyle'].variables
       : variable;
     const platformStyle = variables.platformStyle;

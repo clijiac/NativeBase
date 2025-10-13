@@ -1,0 +1,2 @@
+var _interopRequireDefault=require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports,"__esModule",{value:true});exports.default=setDefaultThemeStyle;var _nativeBaseShoutemTheme=require("native-base-shoutem-theme");var _components=_interopRequireDefault(require("./theme/components"));function setDefaultThemeStyle(){var theme=(0,_components.default)();_nativeBaseShoutemTheme.Theme.setDefaultThemeStyle(theme);}
+//# sourceMappingURL=init.js.map

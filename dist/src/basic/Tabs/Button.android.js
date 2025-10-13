@@ -1,0 +1,2 @@
+var _jsxRuntime=require("react/jsx-runtime");var _this=this,_jsxFileName="C:\\Users\\cliji\\WebstormProjects\\NativeBase\\src\\basic\\Tabs\\Button.android.js";var React=require('react');var ReactNative=require('react-native');var TouchableNativeFeedback=ReactNative.TouchableNativeFeedback,View=ReactNative.View;var Button=function Button(props){return(0,_jsxRuntime.jsx)(TouchableNativeFeedback,Object.assign({delayPressIn:0},props,{children:props.children}));};module.exports=Button;
+//# sourceMappingURL=Button.android.js.map
