@@ -2133,6 +2133,11 @@ async-limiter@~1.0.0:
   resolved "https://registry.npmmirror.com/async-limiter/-/async-limiter-1.0.0.tgz"
   integrity sha512-jp/uFnooOiO+L211eZOoSyzpOITMXx1rBITauYykG3BRYPu8h0UcxsPNB04RR5vo4Tyz3+ay17tR6JVf9qzYWg==
 
+auto-bind@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.npmmirror.com/auto-bind/-/auto-bind-5.0.1.tgz"
+  integrity sha512-ooviqdwwgfIfNmDwo94wlshcdzfO64XV0Cg6oDsDYBJfITDz1EngD2z7DkbvCWn+XIMsIqW27sEVF6qcpJrRcg==
+
 available-typed-arrays@^1.0.7:
   version "1.0.7"
   resolved "https://registry.npmmirror.com/available-typed-arrays/-/available-typed-arrays-1.0.7.tgz"
@@ -2626,7 +2631,7 @@ create-jest@^29.7.0:
     jest-util "^29.7.0"
     prompts "^2.0.1"
 
-create-react-class@*, create-react-class@^15.6.3:
+create-react-class@*:
   version "15.6.3"
   resolved "https://registry.npmmirror.com/create-react-class/-/create-react-class-15.6.3.tgz"
   integrity sha512-M+/3Q6E6DLO6Yx3OwrWjwHBnvfXXYA7W+dFjt/ZDBemHO1DDZhsalX/NUtnTYclN6GfnBDRh4qRHjcDHmlJBJg==
@@ -5265,13 +5270,16 @@ multimatch@^4.0.0:
     arrify "^2.0.1"
     minimatch "^3.0.4"
 
-"native-base-shoutem-theme@npm:native-base-shoutem-theme-19@0.4.3":
-  version "0.4.3"
-  resolved "git+ssh://git@github.com/clijiac/theme.git#7b4813a3141ef2cfa4e0618340a6b21bc7cd33fd"
+"native-base-shoutem-theme@npm:native-base-shoutem-theme-19@0.4.5":
+  version "0.4.5"
+  resolved "https://registry.npmmirror.com/native-base-shoutem-theme-19/-/native-base-shoutem-theme-19-0.4.5.tgz"
+  integrity sha512-l3Bl75Mn3BlKaoPVrOncZOV6c63+njOjMPacozupgRFKYRUg0fJTSAOM/EF+23S6vv/VfXu/nHooNDJ6+hdk+w==
   dependencies:
+    auto-bind "^5.0.1"
     hoist-non-react-statics "^3.3.2"
     lodash "^4.17.21"
     prop-types "^15.8.1"
+    tinycolor2 "1.4.2"
 
 natural-compare@^1.4.0:
   version "1.4.0"
@@ -6698,6 +6706,11 @@ throat@^5.0.0:
   version "5.0.0"
   resolved "https://registry.npmmirror.com/throat/-/throat-5.0.0.tgz"
   integrity sha512-fcwX4mndzpLQKBS1DVYhGAcYaYt7vsHNIvQV+WXMvnow5cgjPphq5CaayLaGsjRdSCKZFNGt7/GYAuXaNOiYCA==
+
+tinycolor2@1.4.2:
+  version "1.4.2"
+  resolved "https://registry.npmmirror.com/tinycolor2/-/tinycolor2-1.4.2.tgz"
+  integrity sha512-vJhccZPs965sV/L2sU4oRQVAos0pQXwsvTLkWYdqJ+a8Q5kPFzJTuOFwy7UniPli44NKQGAglksjvOcpo95aZA==
 
 tmpl@1.0.5:
   version "1.0.5"

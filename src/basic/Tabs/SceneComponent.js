@@ -1,11 +1,8 @@
-const React = require('react');
-const ReactNative = require('react-native');
-const { Component } = React;
-const { View, StyleSheet } = ReactNative;
+import React from 'react';
+import { View } from 'react-native';
+import StaticContainer from './StaticContainer';
 
-const StaticContainer = require('./StaticContainer');
-
-const SceneComponent = Props => {
+const SceneComponent = (Props) => {
   const { shouldUpdated, ...props } = Props;
   return (
     <View {...props}>
@@ -16,5 +13,4 @@ const SceneComponent = Props => {
   );
 };
 
-module.exports = SceneComponent;
-// export default SceneComponent;
+export default SceneComponent;

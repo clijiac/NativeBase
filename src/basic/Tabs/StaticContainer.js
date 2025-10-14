@@ -1,11 +1,11 @@
-const React = require('react');
+import React from 'react';
 
 class StaticContainer extends React.Component {
-  shouldComponentUpdate(nextProps: Object): boolean {
+  shouldComponentUpdate(nextProps) {
     return !!nextProps.shouldUpdate;
   }
 
-  render(): ?ReactElement {
+  render() {
     const child = this.props.children;
     if (child === null || child === false) {
       return null;
@@ -14,5 +14,4 @@ class StaticContainer extends React.Component {
   }
 }
 
-module.exports = StaticContainer;
-// export default StaticContainer;
+export default StaticContainer;

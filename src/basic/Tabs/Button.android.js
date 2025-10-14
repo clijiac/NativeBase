@@ -1,6 +1,5 @@
-const React = require('react');
-const ReactNative = require('react-native');
-const { TouchableNativeFeedback, View } = ReactNative;
+import React from 'react';
+import { TouchableNativeFeedback } from 'react-native';
 
 const Button = props => {
   return (
@@ -13,5 +12,4 @@ const Button = props => {
   );
 };
 
-module.exports = Button;
-// export default Button;
+export default Button;

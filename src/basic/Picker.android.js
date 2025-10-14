@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import createReactClass from 'create-react-class';
 import { Picker } from '@react-native-picker/picker';
 import { connectStyle } from 'native-base-shoutem-theme';
 
@@ -15,11 +14,12 @@ export default class PickerNB extends Component {
   }
 }
 
-PickerNB.Item = createReactClass({
+class PickerItem extends Component {
   render() {
     return <Picker.Item {...this.props} />;
   }
-});
+}
+PickerNB.Item = PickerItem;
 
 /*
 PickerNB.propTypes = {

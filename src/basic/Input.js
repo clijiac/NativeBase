@@ -11,6 +11,8 @@ import variable from '../theme/variables/platform';
 
 class Input extends React.Component {
   static contextType = ThemeContext;
+  _root = null;
+  _textInput = null;
   render() {
     const variables = this.context && this.context.theme
       ? this.context.theme['@@shoutem.theme/themeStyle'].variables

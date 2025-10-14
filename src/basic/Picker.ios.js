@@ -1,9 +1,9 @@
 /* eslint-disable react/sort-comp */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import createReactClass from 'create-react-class';
 import { ViewPropTypes } from "deprecated-react-native-prop-types";
-import { FlatList, Modal, Picker, View } from 'react-native';
+import { FlatList, Modal, View } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 import { connectStyle } from 'native-base-shoutem-theme';
 import { find, get } from 'lodash';
 
@@ -244,11 +244,12 @@ class PickerNB extends Component {
   }
 }
 
-PickerNB.Item = createReactClass({
+class PickerItem extends Component {
   render() {
-    return <Picker.Item {...this.props()} />;
+    return <Picker.Item {...this.props} />;
   }
-});
+}
+PickerNB.Item = PickerItem;
 
 PickerNB.propTypes = {
   ...ViewPropTypes,
