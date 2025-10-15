@@ -1,3 +1,4 @@
+/*
 import React, { Component } from 'react';
 import RNDrawer from 'react-native-drawer';
 
@@ -30,3 +31,4 @@ Drawer.defaultProps = {
     mainOverlay: { opacity: ratio / 2 }
   })
 };
+*/

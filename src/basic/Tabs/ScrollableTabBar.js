@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { isEqual } from 'lodash';
-import { connectStyle, StyleProvider } from 'native-base-shoutem-theme';
+import { connectStyle, StyleProvider, ThemeContext } from 'native-base-shoutem-theme';
 import mapPropsToStyleNames from '../../utils/mapPropsToStyleNames';
 import variable from './../../theme/variables/platform';
 import { TabHeading } from '../TabHeading';
@@ -38,9 +38,7 @@ class ScrollableTabBar extends React.Component {
     onScroll: PropTypes.func
   };
 
-  static contextTypes = {
-    theme: PropTypes.object
-  };
+  static contextType = ThemeContext;
 
   static defaultProps = {
     scrollOffset: 52,
