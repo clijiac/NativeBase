@@ -1,2 +1,0 @@
-Object.defineProperty(exports,"__esModule",{value:true});exports.default=void 0;var _default=exports.default=function _default(){var bodyTheme={flex:1,alignItems:'center',alignSelf:'center'};return bodyTheme;};
-//# sourceMappingURL=Body.js.map

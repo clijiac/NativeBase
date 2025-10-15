@@ -1,2 +1,0 @@
-Object.defineProperty(exports,"__esModule",{value:true});exports.default=void 0;var _reactNative=require("react-native");var _default=exports.default=Object.assign({},_reactNative.InteractionManager,{runAfterInteractions:function runAfterInteractions(f){var called=false;var timeout=setTimeout(function(){called=true;f();},10);_reactNative.InteractionManager.runAfterInteractions(function(){if(called)return;clearTimeout(timeout);f();});}});
-//# sourceMappingURL=interactionManager.js.map

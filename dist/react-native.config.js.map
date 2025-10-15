@@ -1,1 +1,0 @@
-{"version":3,"file":"react-native.config.js","names":["module","exports","dependency","assets"],"sources":["../react-native.config.js"],"sourcesContent":["module.exports = {\r\n  dependency: {\r\n    assets: ['Fonts']\r\n  }\r\n};\r\n"],"mappings":"AAAAA,MAAM,CAACC,OAAO,CAAG,CACfC,UAAU,CAAE,CACVC,MAAM,CAAE,CAAC,OAAO,CAClB,CACF,CAAC","ignoreList":[]}

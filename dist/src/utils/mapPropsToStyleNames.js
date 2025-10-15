@@ -1,2 +1,0 @@
-var _interopRequireDefault=require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports,"__esModule",{value:true});exports.default=void 0;var _lodash=_interopRequireDefault(require("lodash"));var mapPropsToStyleNames=function mapPropsToStyleNames(styleNames,props){var keys=_lodash.default.keys(props);var values=_lodash.default.values(props);_lodash.default.forEach(keys,function(key,index){if(values[index]){styleNames.push(key);}});return styleNames;};var _default=exports.default=mapPropsToStyleNames;
-//# sourceMappingURL=mapPropsToStyleNames.js.map
