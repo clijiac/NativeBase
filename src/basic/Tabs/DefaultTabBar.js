@@ -9,6 +9,7 @@ import { Text } from '../Text';
 import { ViewPropTypes } from '../../utils';
 import { Animated, Platform, StyleSheet, View } from 'react-native';
 import Button from './Button';
+import { TabContainer } from '../TabContainer';
 
 class DefaultTabBar extends React.Component {
   static propTypes = {
