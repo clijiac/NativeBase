@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   Platform,
   View,
-  TouchableNativeFeedback,
+  Pressable,
   StyleSheet
 } from 'react-native';
 import { connectStyle, ThemeContext } from 'native-base-shoutem-theme';
@@ -92,6 +92,8 @@ class Button extends Component {
         this.props.full || this.props.block
           ? variable.buttonDefaultFlex
           : buttonStyle.flex;
+      const pressableProps = { ...this.prepareRootProps() };
+      delete pressableProps.style;
       return (
         <View
           style={[
@@ -100,13 +102,14 @@ class Button extends Component {
             { paddingTop: undefined, paddingBottom: undefined }
           ]}
         >
-          <TouchableNativeFeedback
+          <Pressable
             ref={c => (this._root = c)}
-            background={TouchableNativeFeedback.Ripple(
-              this.props.androidRippleColor || variables.androidRippleColor,
-              true
-            )}
-            {...this.prepareRootProps()}
+            android_ripple={{
+              color:
+                this.props.androidRippleColor || variables.androidRippleColor,
+              borderless: true
+            }}
+            {...pressableProps}
           >
             <View
               style={[
@@ -122,26 +125,32 @@ class Button extends Component {
             >
               {children}
             </View>
-          </TouchableNativeFeedback>
+          </Pressable>
         </View>
       );
     }
     return (
-      <TouchableNativeFeedback
-        ref={c => (this._root = c)}
-        onPress={this.props.onPress}
-        background={
-          this.props.transparent
-            ? TouchableNativeFeedback.Ripple('transparent')
-            : TouchableNativeFeedback.Ripple(
-                variables.androidRippleColor,
-                false
-              )
-        }
-        {...this.prepareRootProps()}
-      >
-        <View {...this.prepareRootProps()}>{children}</View>
-      </TouchableNativeFeedback>
+      <>
+        {(() => {
+          const pressableProps = { ...this.prepareRootProps() };
+          delete pressableProps.style;
+          return (
+            <Pressable
+              ref={c => (this._root = c)}
+              onPress={this.props.onPress}
+              android_ripple={{
+                color: this.props.transparent
+                  ? 'transparent'
+                  : variables.androidRippleColor,
+                borderless: false
+              }}
+              {...pressableProps}
+            >
+              <View {...this.prepareRootProps()}>{children}</View>
+            </Pressable>
+          );
+        })()}
+      </>
     );
   }
 }

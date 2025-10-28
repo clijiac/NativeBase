@@ -3,7 +3,7 @@ import {
   Platform,
   Animated,
   TouchableOpacity,
-  TouchableNativeFeedback,
+  Pressable,
   View,
   StyleSheet
 } from 'react-native';
@@ -466,19 +466,24 @@ class Fab extends Component {
             {this.renderFab()}
           </TouchableOpacity>
         ) : (
-          <TouchableNativeFeedback
-            onPress={() => this.fabOnPress()}
-            // eslint-disable-next-line new-cap
-            background={TouchableNativeFeedback.Ripple(
-              variables.androidRippleColor,
-              false
-            )}
-            {...this.prepareFabProps()}
-          >
-            <View style={[this.getInitialStyle().fab, style]}>
-              {this.renderFab()}
-            </View>
-          </TouchableNativeFeedback>
+          (() => {
+            const pressableProps = { ...this.prepareFabProps() };
+            delete pressableProps.style;
+            return (
+              <Pressable
+                onPress={() => this.fabOnPress()}
+                android_ripple={{
+                  color: variables.androidRippleColor,
+                  borderless: false
+                }}
+                {...pressableProps}
+              >
+                <View style={[this.getInitialStyle().fab, style]}>
+                  {this.renderFab()}
+                </View>
+              </Pressable>
+            );
+          })()
         )}
       </Animated.View>
     );

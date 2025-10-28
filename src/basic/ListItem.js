@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {
   TouchableHighlight,
   Platform,
-  TouchableNativeFeedback,
+  Pressable,
   View
 } from 'react-native';
 import { connectStyle, ThemeContext } from 'native-base-shoutem-theme';
@@ -41,13 +41,22 @@ class ListItem extends Component {
       );
     }
     return (
-      <TouchableNativeFeedback ref={c => (this._root = c)} {...this.props}>
-        <View style={{ marginLeft: -17, paddingLeft: 17 }}>
-          <View {...this.props} testID={undefined}>
-            {this.props.children}
-          </View>
-        </View>
-      </TouchableNativeFeedback>
+      (() => {
+        const pressableProps = { ...this.props };
+        delete pressableProps.style;
+        return (
+          <Pressable
+            ref={c => (this._root = c)}
+            {...pressableProps}
+          >
+            <View style={{ marginLeft: -17, paddingLeft: 17 }}>
+              <View {...this.props} testID={undefined}>
+                {this.props.children}
+              </View>
+            </View>
+          </Pressable>
+        );
+      })()
     );
   }
 }
